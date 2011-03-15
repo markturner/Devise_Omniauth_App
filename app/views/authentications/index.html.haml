@@ -21,4 +21,4 @@
 = render :partial => "devise/shared/services"
 
 - if @auths
-  Delete your account?
+  = link_to "Delete your account?", current_user, :confirm => 'Are you sure you want to delete your account? There is no undo!', :method => :delete

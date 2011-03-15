@@ -10,8 +10,8 @@ Junket::Application.routes.draw do
   end
 
   root :to => 'home#index'
-  
-  resource :home  
+  resource :home, :only => :index
+  resources :users, :only => :destroy
   resources :authentications
 
 end
