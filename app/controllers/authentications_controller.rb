@@ -6,14 +6,14 @@ class AuthenticationsController < ApplicationController
   def create
     omniauth = request.env["omniauth.auth"]
     authentication = Authentication.find_by_provider_and_uid(omniauth['provider'], omniauth['uid'])
-    if authentication
+    if authentication   # sign in if service associated with logged out user
       flash[:notice] = "Signed in successfully."
       sign_in_and_redirect(:user, authentication.user)
-    elsif current_user
+    elsif current_user  # add service to current logged in user
       current_user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
       flash[:notice] = "Authentication successful."
       redirect_to authentications_url
-    else
+    else    # register new user
       user = User.new
       user.apply_omniauth(omniauth)
       if user.save
