@@ -10,7 +10,7 @@
   
   <div id="user_nav">
 	  <% if user_signed_in? %>
-	    Signed in as <%= current_user.email %>. Not you?
+	    Signed in as <%= link_to (current_user.name or current_user.email), account_path %>. Not you?
 	    <%= link_to "Log out", logout_path %>
 	  <% else %>
 	    <%= link_to "Register", register_path %> or <%= link_to "log in", login_path %>
