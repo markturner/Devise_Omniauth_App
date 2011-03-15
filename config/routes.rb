@@ -5,7 +5,7 @@ Junket::Application.routes.draw do
   devise_for :users, :controllers => { :registrations => 'registrations' } do
     get 'login', :to => 'devise/sessions#new'
     get 'logout', :to => 'devise/sessions#destroy'
-    get 'register', :to => 'devise/registrations#new'
+    get 'register', :to => 'registrations#new'
   end
 
   root :to => 'home#index'

@@ -9,6 +9,7 @@ gem 'haml-rails'
 # gem 'pg'
 gem 'devise', '~> 1.2.rc'
 gem "oa-oauth", :require => "omniauth/oauth"
+gem "oa-openid"
 gem 'mail'
 gem 'compass'
 gem 'hassle', :git => 'git://github.com/koppen/hassle.git'
