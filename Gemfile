@@ -6,7 +6,7 @@ gem 'rails', '3.0.4'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'haml-rails'
-gem 'pg'
+# gem 'pg'
 gem 'devise', '~> 1.2.rc'
 gem "oa-oauth", :require => "omniauth/oauth"
 gem 'mail'

@@ -1,0 +1,37 @@
+%h2 Sign in
+
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  %p
+    = f.label :email
+    %br
+    = f.email_field :email
+
+  %p
+    = f.label :password 
+    %br
+    = f.password_field :password
+
+  - if devise_mapping.rememberable?
+    %p
+      = f.check_box :remember_me
+      = f.label :remember_me
+  
+  %p
+    = f.submit "Sign in"
+
+= render :partial => "devise/shared/links"
+
+%p
+  %strong Or, sign in through one of these services:
+
+%a{:href => "/users/auth/twitter", :class => "auth_provider"}
+  = image_tag "twitter_64.png", :size => "64x64", :alt => "Twitter"
+  Twitter
+%a{:href => "/users/auth/facebook", :class => "auth_provider"}
+  = image_tag "facebook_64.png", :size => "64x64", :alt => "Facebook"
+  Facebook
+%a{:href => "/users/auth/google", :class => "auth_provider"}
+  = image_tag "google_64.png", :size => "64x64", :alt => "Google"
+  Google
+
+.clear

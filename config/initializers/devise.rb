@@ -34,7 +34,7 @@ Devise.setup do |config|
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.
-  config.case_insensitive_keys = [ :username ]
+  config.case_insensitive_keys = [ :email ]
 
   # Tell if authentication through request.params is enabled. True by default.
   # config.params_authenticatable = true
@@ -172,8 +172,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
-  config.omniauth :twitter, 'PyXZXQKyIDn1UDf0EQw2A', 'LZnUKAfUr7A45rJIQJ0iKzohuwgZM26kDdGCPREOZEE'
-  config.omniauth :facebook, '118085544932814', '92314eb527229ce131d8b8fa2ada8345'  
+  # config.omniauth :twitter, 'PyXZXQKyIDn1UDf0EQw2A', 'LZnUKAfUr7A45rJIQJ0iKzohuwgZM26kDdGCPREOZEE'
+  # config.omniauth :facebook, '118085544932814', '92314eb527229ce131d8b8fa2ada8345'  
 
 
   # ==> Warden configuration

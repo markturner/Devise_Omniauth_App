@@ -1,8 +1,8 @@
 Junket::Application.routes.draw do
   
-  match '/auth/:provider/callback' => 'authentications#create'
+  match '/users/auth/:provider/callback' => 'authentications#create'
   
-  devise_for :users do
+  devise_for :users, :controllers => { :registrations => 'registrations' } do
     get 'login', :to => 'devise/sessions#new'
     get 'logout', :to => 'devise/sessions#destroy'
     get 'register', :to => 'devise/registrations#new'
