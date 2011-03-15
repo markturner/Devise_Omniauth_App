@@ -8,7 +8,8 @@
           = image_tag "#{authentication.provider}_32.png", :size => "32x32"
           .provider= authentication.provider_name
           .uid= truncate(authentication.uid)
-          = link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
+          - if @auths.size > 1 or current_user.encrypted_password.present?  # to prevent people deleting their last method of logging in!
+            = link_to "X", authentication, :confirm => 'Are you sure you want to remove this authentication option?', :method => :delete, :class => "remove"
     .clear
       
     %p
@@ -18,3 +19,6 @@
     %strong Sign in through one of these services:
 
 = render :partial => "devise/shared/services"
+
+- if @auths
+  Delete your account?
