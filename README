@@ -1,3 +1,5 @@
 This is a generic template app that allows logging in via Twitter, Facebook and Google, using Devise and Omniauth.
 
 Set up your own services in config/initializers/omniauth.rb and you're away.
+
+There's also an admin interface for editing your users, which is available to users for whom the admin boolean field is true.
