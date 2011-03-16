@@ -15,13 +15,14 @@ class AuthenticationsController < ApplicationController
       # add service to current logged in user
       current_user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
       flash[:notice] = "Authentication successful."
-      redirect_to authentications_url
+      redirect_to account_url
     else
       if user = User.find_by_email(omniauth['user_info']['email'])  
         # check if user exists and associate service and log them in if so (fix for google 'email already taken' bug)
         user.authentications.create!(:provider => omniauth['provider'], :uid => omniauth['uid'])
         flash[:notice] = "Authentication successful."
-        sign_in_and_redirect(:user, user)
+        sign_in(:user, user)
+        redirect_to account_url
       else  
         # if user doesn't exist, register new user
         user = User.new
@@ -41,7 +42,7 @@ class AuthenticationsController < ApplicationController
     @auth = current_user.authentications.find(params[:id])
     @auth.destroy
     flash[:notice] = "Successfully deleted authentication"
-    redirect_to authentications_url
+    redirect_to account_url
   end
 
 end
