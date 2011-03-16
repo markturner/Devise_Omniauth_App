@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :username, :name, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :name, :email, :password, :password_confirmation, :remember_me, :admin
   
   def apply_omniauth(omniauth)
     self.email = omniauth['user_info']['email'] if email.blank?
