@@ -4,4 +4,4 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
-Junket::Application.load_tasks
+Devise_Omniauth_App::Application.load_tasks

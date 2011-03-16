@@ -1,4 +1,4 @@
-Junket::Application.routes.draw do
+Devise_Omniauth_App::Application.routes.draw do
   
   match 'account' => 'authentications#index'
   match '/users/auth/:provider/callback' => 'authentications#create'
