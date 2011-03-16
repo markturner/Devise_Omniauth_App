@@ -14,4 +14,10 @@ Devise_Omniauth_App::Application.routes.draw do
   resources :users, :only => :destroy
   resources :authentications
 
+  namespace :admin do
+ 		resources :users
+ 		root :to => "users#index"
+  end
+  
+
 end
