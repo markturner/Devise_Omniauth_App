@@ -3,3 +3,5 @@ This is a generic template app that allows logging in via Twitter, Facebook and 
 Set up your own services in config/initializers/omniauth.rb and you're away.
 
 There's also an admin interface for editing your users, which is available to users for whom the admin boolean field is true.
+
+KNOWN ISSUE: Because twitter doesn't provide email addresses in it's auth response, there is no secure way of signing someone in via twitter unless they have already signed in and associated twitter with their account (or unless they used it to sign up).
